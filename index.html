@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Moon Shifters - An Interactive Romance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Ambient particles overlay -->
+    <div id="particles"></div>
+
+    <!-- Moon glow effect -->
+    <div id="moon-glow"></div>
+
+    <!-- Main Game Container -->
+    <div id="game-container">
+        <!-- Title Screen -->
+        <div id="title-screen" class="screen active">
+            <div class="title-content">
+                <div class="moon-icon">🌕</div>
+                <h1 class="game-title">Blood Moon Shifters</h1>
+                <p class="tagline">An Interactive Paranormal Romance</p>
+                <div class="title-buttons">
+                    <button id="new-game-btn" class="btn btn-primary">Begin Your Story</button>
+                    <button id="continue-btn" class="btn btn-secondary" style="display: none;">Continue</button>
+                </div>
+                <div class="sound-toggle-container">
+                    <button id="sound-toggle" class="btn-icon" title="Toggle Sound">
+                        <span class="sound-on">🔊</span>
+                        <span class="sound-off" style="display: none;">🔇</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <!-- Top HUD -->
+            <div id="game-hud">
+                <div class="hud-left">
+                    <div id="romance-meter">
+                        <span class="meter-label">💜 Romance</span>
+                        <div class="meter-bar">
+                            <div id="romance-fill" class="meter-fill"></div>
+                        </div>
+                        <span id="romance-value">0</span>
+                    </div>
+                </div>
+                <div class="hud-right">
+                    <button id="save-btn" class="btn-small" title="Save Progress">💾 Save</button>
+                    <button id="menu-btn" class="btn-small" title="Menu">☰</button>
+                    <button id="sound-toggle-game" class="btn-icon-small">🔊</button>
+                </div>
+            </div>
+
+            <!-- Scene Container -->
+            <div id="scene-container">
+                <!-- Character Portrait Area -->
+                <div id="character-area">
+                    <div id="character-portrait" class="hidden">
+                        <div class="portrait-frame">
+                            <div id="character-image"></div>
+                            <div id="character-name-badge"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Text Area -->
+                <div id="story-area">
+                    <div id="location-badge"></div>
+                    <div id="story-text"></div>
+                </div>
+
+                <!-- Choices Area -->
+                <div id="choices-area"></div>
+            </div>
+
+            <!-- Notification popup -->
+            <div id="notification" class="hidden">
+                <span id="notification-text"></span>
+            </div>
+        </div>
+
+        <!-- Ending Screen -->
+        <div id="ending-screen" class="screen">
+            <div class="ending-content">
+                <div id="ending-icon"></div>
+                <h2 id="ending-title"></h2>
+                <div id="ending-text"></div>
+                <div class="ending-stats">
+                    <p>Final Romance Level: <span id="final-romance"></span></p>
+                    <p>Choices Made: <span id="final-choices"></span></p>
+                </div>
+                <div class="ending-buttons">
+                    <button id="play-again-btn" class="btn btn-primary">Play Again</button>
+                    <button id="share-btn" class="btn btn-secondary">Share Your Story</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pause Menu Overlay -->
+        <div id="pause-menu" class="overlay hidden">
+            <div class="overlay-content">
+                <h2>Paused</h2>
+                <button id="resume-btn" class="btn btn-primary">Resume</button>
+                <button id="save-menu-btn" class="btn btn-secondary">Save Game</button>
+                <button id="load-btn" class="btn btn-secondary">Load Game</button>
+                <button id="quit-btn" class="btn btn-danger">Return to Title</button>
+            </div>
+        </div>
+
+        <!-- Save Notification -->
+        <div id="save-notification" class="save-popup hidden">
+            <span>✓ Progress Saved</span>
+        </div>
+    </div>
+
+    <!-- Audio elements (using Web Audio API for better control) -->
+    <script src="game.js"></script>
+</body>
+</html>
