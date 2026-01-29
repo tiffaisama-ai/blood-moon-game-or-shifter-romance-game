@@ -415,8 +415,8 @@ body::before {
 
 .portrait-frame {
     position: relative;
-    width: 180px;
-    height: 250px;
+    width: 280px;
+    height: 320px;
     background: linear-gradient(180deg, var(--color-shadow) 0%, var(--color-night) 100%);
     border: 2px solid var(--color-twilight);
     border-radius: 8px;
@@ -426,7 +426,17 @@ body::before {
         0 0 60px rgba(107, 76, 154, 0.2);
 }
 
+/* Real character image */
 #character-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+/* Fallback silhouette if image fails to load */
+.character-silhouette {
     width: 100%;
     height: 100%;
     display: flex;
@@ -435,8 +445,7 @@ body::before {
     background: linear-gradient(180deg, var(--color-dusk) 0%, var(--color-shadow) 100%);
 }
 
-/* Silhouette character placeholder */
-#character-image::before {
+.character-silhouette::before {
     content: '';
     width: 120px;
     height: 200px;
@@ -450,13 +459,10 @@ body::before {
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
-    mask-position: center;
-    -webkit-mask-position: center;
     filter: drop-shadow(0 0 20px var(--color-amethyst));
 }
 
-/* Glowing eyes effect for shifter */
-#character-image::after {
+.character-silhouette::after {
     content: '';
     position: absolute;
     top: 60px;
@@ -787,18 +793,8 @@ body::before {
     }
 
     .portrait-frame {
-        width: 140px;
-        height: 200px;
-    }
-
-    #character-image::before {
-        width: 90px;
-        height: 150px;
-    }
-
-    #character-image::after {
-        top: 45px;
-        width: 40px;
+        width: 220px;
+        height: 260px;
     }
 
     #story-text {
@@ -857,18 +853,8 @@ body::before {
     }
 
     .portrait-frame {
-        width: 120px;
-        height: 170px;
-    }
-
-    #character-image::before {
-        width: 75px;
-        height: 130px;
-    }
-
-    #character-image::after {
-        top: 38px;
-        width: 35px;
+        width: 180px;
+        height: 220px;
     }
 
     .ending-content {

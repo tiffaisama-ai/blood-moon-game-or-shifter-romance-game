@@ -63,7 +63,8 @@
                 <div id="character-area">
                     <div id="character-portrait" class="hidden">
                         <div class="portrait-frame">
-                            <div id="character-image"></div>
+                            <img id="character-image" src="characters.jpg" alt="The Shifters of Ravenshollow" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                            <div id="character-fallback" class="character-silhouette" style="display:none"></div>
                             <div id="character-name-badge"></div>
                         </div>
                     </div>
